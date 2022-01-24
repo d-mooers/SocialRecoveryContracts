@@ -9,7 +9,7 @@ import "dotenv/config";
 import "hardhat-abi-exporter";
 import { removeConsoleLog } from "hardhat-preprocessor";
 import "hardhat-spdx-license-identifier";
-import { HardhatUserConfig, task } from "hardhat/config";
+import { HardhatUserConfig } from "hardhat/config";
 import { HDAccountsUserConfig } from "hardhat/types";
 import "solidity-coverage";
 
