@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/KeyRecovery.sol": {
+      "content": "//SPDX-License-Identifier: Unlicense\npragma solidity ^0.8.0;\n\ncontract KeyRecovery {\n  struct Context {\n    bytes32 secret;\n    address[] guardians;\n    mapping(address => bytes32) secretShare;\n    bytes32[] recoveryShares;\n    uint256 K;\n    address requester;\n    uint256 cooldownTime; // Cool down time so that an account cannot be repeatedly entered into recovery mode\n  }\n\n  mapping(address => Context) private recoveryInfo;\n  mapping(bytes32 => address) private accountIdentifier;\n\n  uint256 constant RECOVERY_PERIOD = 7 days;\n\n  event RecoveryInitiated(\n    address accountToRecover,\n    address recoveryRequester,\n    address[] guardians\n  );\n\n  event ThresholdReached(address accountToRecover, address recoveryRequester);\n\n  modifier newAccount() {\n    require(\n      uint256(recoveryInfo[msg.sender].secret) == 0,\n      \"Account already exists in the system\"\n    );\n    _;\n  }\n\n  modifier recoveryRequested(address account) {\n    require(\n      recoveryInfo[account].requester != address(0),\n      \"Account has not been requested to be recovered\"\n    );\n    _;\n  }\n\n  modifier identifierMatches(address account, bytes32 identifier) {\n    require(\n      accountIdentifier[identifier] == account,\n      \"Identifier does not match account address\"\n    );\n    _;\n  }\n\n  modifier backupExists(address account) {\n    require(\n      uint256(recoveryInfo[account].secret) != 0,\n      \"Recovery info does not exist for the account\"\n    );\n    _;\n  }\n\n  modifier notOnCooldown(address account) {\n    require(\n      block.timestamp >= recoveryInfo[account].cooldownTime,\n      \"It is too soon to request recovery\"\n    );\n    _;\n  }\n\n  function getKeyshare(address account, address guardian)\n    external\n    view\n    backupExists(account)\n    recoveryRequested(account)\n    returns (bytes32 encryptedKeyshare, address requester)\n  {\n    Context storage context = recoveryInfo[account];\n    encryptedKeyshare = context.secretShare[guardian];\n    requester = context.requester;\n  }\n\n  function addAccount(\n    bytes32 secret,\n    address[] memory guardians,\n    bytes32[] memory keyShares,\n    uint256 K,\n    string memory identifier\n  ) external newAccount {\n    require(\n      guardians.length == keyShares.length,\n      \"Key share number discrepency\"\n    );\n    require(\n      K <= guardians.length,\n      \"Threshold must be <= total number of guardians\"\n    );\n\n    accountIdentifier[keccak256(abi.encodePacked(identifier))] = msg.sender;\n\n    Context storage context = recoveryInfo[msg.sender];\n    context.secret = secret;\n    context.K = K;\n    context.guardians = new address[](guardians.length);\n    for (uint8 i = 0; i < guardians.length; i++) {\n      context.guardians[i] = guardians[i];\n      context.secretShare[guardians[i]] = keyShares[i];\n    }\n  }\n\n  function initiateRecovery(address account, string calldata identifier)\n    external\n    backupExists(account)\n    identifierMatches(account, keccak256(abi.encodePacked(identifier)))\n  {\n    Context storage context = recoveryInfo[msg.sender];\n    context.requester = msg.sender;\n    emit RecoveryInitiated(account, msg.sender, context.guardians);\n  }\n\n  function endRecovery() external backupExists(msg.sender) {\n    Context storage context = recoveryInfo[msg.sender];\n    context.requester = address(0);\n    context.cooldownTime = block.timestamp + RECOVERY_PERIOD;\n  }\n\n  function postRecoveryShares(address account, bytes32 encryptedShare)\n    external\n    backupExists(account)\n    recoveryRequested(account)\n  {\n    Context storage context = recoveryInfo[account];\n    context.recoveryShares.push(encryptedShare);\n\n    if (context.recoveryShares.length >= context.K) {\n      emit ThresholdReached(account, context.requester);\n    }\n  }\n\n  function getRecoveryShares(address account)\n    external\n    view\n    backupExists(account)\n    recoveryRequested(account)\n    returns (bytes32[] memory)\n  {\n    return recoveryInfo[account].recoveryShares;\n  }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 5000
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

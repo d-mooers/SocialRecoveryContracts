@@ -8,7 +8,6 @@ import { fornoURLs, ICeloNetwork } from "@ubeswap/hardhat-celo";
 import "dotenv/config";
 import "hardhat-abi-exporter";
 import { removeConsoleLog } from "hardhat-preprocessor";
-import "hardhat-spdx-license-identifier";
 import { HardhatUserConfig } from "hardhat/config";
 import { HDAccountsUserConfig } from "hardhat/types";
 import "solidity-coverage";

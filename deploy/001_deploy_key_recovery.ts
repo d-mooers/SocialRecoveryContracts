@@ -19,13 +19,13 @@ const deploy: DeployFunction = async function ({
     log: true,
   });
 
-  writeDeployment(chainId, {
-    [`KeyRecovery-${Date.now()}`]: deployment.address,
-  });
+  //   writeDeployment(chainId, {
+  //     [`KeyRecovery-${Date.now()}`]: deployment.address,
+  //   });
 };
 
 const makeConfigPath = (chainId: string): string =>
-  path.join(__dirname, "..", "..", "deployments", `${chainId}.addresses.json`);
+  path.join(__dirname, "..", "..", "records", `${chainId}.addresses.json`);
 
 const writeDeployment = async (
   chainId: string,

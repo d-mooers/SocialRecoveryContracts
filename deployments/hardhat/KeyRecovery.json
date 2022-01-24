@@ -1,0 +1,338 @@
+{
+  "address": "0x53D539Eed1eB9B75012f2539690C485d1321c120",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "accountToRecover",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "recoveryRequester",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address[]",
+          "name": "guardians",
+          "type": "address[]"
+        }
+      ],
+      "name": "RecoveryInitiated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "accountToRecover",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "recoveryRequester",
+          "type": "address"
+        }
+      ],
+      "name": "ThresholdReached",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "secret",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address[]",
+          "name": "guardians",
+          "type": "address[]"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "keyShares",
+          "type": "bytes32[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "K",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "identifier",
+          "type": "string"
+        }
+      ],
+      "name": "addAccount",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "endRecovery",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "guardian",
+          "type": "address"
+        }
+      ],
+      "name": "getKeyshare",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "encryptedKeyshare",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "requester",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "getRecoveryShares",
+      "outputs": [
+        {
+          "internalType": "bytes32[]",
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "identifier",
+          "type": "string"
+        }
+      ],
+      "name": "initiateRecovery",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "encryptedShare",
+          "type": "bytes32"
+        }
+      ],
+      "name": "postRecoveryShares",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x47301024d8d3e3d52d5fd69b5e867dba7bbf778b9d4b3ae0e3c027109634bfcc",
+  "receipt": {
+    "to": null,
+    "from": "0xf73d7f5A890a131f12E4fB03E50277c49748Cf5E",
+    "contractAddress": "0x53D539Eed1eB9B75012f2539690C485d1321c120",
+    "transactionIndex": 0,
+    "gasUsed": "958769",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x31384e57d72948e18e69ef76e65d4a7dcebfdfe7e58a21aa57efd24da3e2fa63",
+    "transactionHash": "0x47301024d8d3e3d52d5fd69b5e867dba7bbf778b9d4b3ae0e3c027109634bfcc",
+    "logs": [],
+    "blockNumber": 1,
+    "cumulativeGasUsed": "958769",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "71081328e64ddb4a97ced3fd3990dbd6",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"accountToRecover\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"recoveryRequester\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"guardians\",\"type\":\"address[]\"}],\"name\":\"RecoveryInitiated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"accountToRecover\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"recoveryRequester\",\"type\":\"address\"}],\"name\":\"ThresholdReached\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"secret\",\"type\":\"bytes32\"},{\"internalType\":\"address[]\",\"name\":\"guardians\",\"type\":\"address[]\"},{\"internalType\":\"bytes32[]\",\"name\":\"keyShares\",\"type\":\"bytes32[]\"},{\"internalType\":\"uint256\",\"name\":\"K\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"identifier\",\"type\":\"string\"}],\"name\":\"addAccount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"endRecovery\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"guardian\",\"type\":\"address\"}],\"name\":\"getKeyshare\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"encryptedKeyshare\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"requester\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"getRecoveryShares\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"identifier\",\"type\":\"string\"}],\"name\":\"initiateRecovery\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"encryptedShare\",\"type\":\"bytes32\"}],\"name\":\"postRecoveryShares\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/KeyRecovery.sol\":\"KeyRecovery\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":5000},\"remappings\":[]},\"sources\":{\"contracts/KeyRecovery.sol\":{\"content\":\"//SPDX-License-Identifier: Unlicense\\npragma solidity ^0.8.0;\\n\\ncontract KeyRecovery {\\n  struct Context {\\n    bytes32 secret;\\n    address[] guardians;\\n    mapping(address => bytes32) secretShare;\\n    bytes32[] recoveryShares;\\n    uint256 K;\\n    address requester;\\n    uint256 cooldownTime; // Cool down time so that an account cannot be repeatedly entered into recovery mode\\n  }\\n\\n  mapping(address => Context) private recoveryInfo;\\n  mapping(bytes32 => address) private accountIdentifier;\\n\\n  uint256 constant RECOVERY_PERIOD = 7 days;\\n\\n  event RecoveryInitiated(\\n    address accountToRecover,\\n    address recoveryRequester,\\n    address[] guardians\\n  );\\n\\n  event ThresholdReached(address accountToRecover, address recoveryRequester);\\n\\n  modifier newAccount() {\\n    require(\\n      uint256(recoveryInfo[msg.sender].secret) == 0,\\n      \\\"Account already exists in the system\\\"\\n    );\\n    _;\\n  }\\n\\n  modifier recoveryRequested(address account) {\\n    require(\\n      recoveryInfo[account].requester != address(0),\\n      \\\"Account has not been requested to be recovered\\\"\\n    );\\n    _;\\n  }\\n\\n  modifier identifierMatches(address account, bytes32 identifier) {\\n    require(\\n      accountIdentifier[identifier] == account,\\n      \\\"Identifier does not match account address\\\"\\n    );\\n    _;\\n  }\\n\\n  modifier backupExists(address account) {\\n    require(\\n      uint256(recoveryInfo[account].secret) != 0,\\n      \\\"Recovery info does not exist for the account\\\"\\n    );\\n    _;\\n  }\\n\\n  modifier notOnCooldown(address account) {\\n    require(\\n      block.timestamp >= recoveryInfo[account].cooldownTime,\\n      \\\"It is too soon to request recovery\\\"\\n    );\\n    _;\\n  }\\n\\n  function getKeyshare(address account, address guardian)\\n    external\\n    view\\n    backupExists(account)\\n    recoveryRequested(account)\\n    returns (bytes32 encryptedKeyshare, address requester)\\n  {\\n    Context storage context = recoveryInfo[account];\\n    encryptedKeyshare = context.secretShare[guardian];\\n    requester = context.requester;\\n  }\\n\\n  function addAccount(\\n    bytes32 secret,\\n    address[] memory guardians,\\n    bytes32[] memory keyShares,\\n    uint256 K,\\n    string memory identifier\\n  ) external newAccount {\\n    require(\\n      guardians.length == keyShares.length,\\n      \\\"Key share number discrepency\\\"\\n    );\\n    require(\\n      K <= guardians.length,\\n      \\\"Threshold must be <= total number of guardians\\\"\\n    );\\n\\n    accountIdentifier[keccak256(abi.encodePacked(identifier))] = msg.sender;\\n\\n    Context storage context = recoveryInfo[msg.sender];\\n    context.secret = secret;\\n    context.K = K;\\n    context.guardians = new address[](guardians.length);\\n    for (uint8 i = 0; i < guardians.length; i++) {\\n      context.guardians[i] = guardians[i];\\n      context.secretShare[guardians[i]] = keyShares[i];\\n    }\\n  }\\n\\n  function initiateRecovery(address account, string calldata identifier)\\n    external\\n    backupExists(account)\\n    identifierMatches(account, keccak256(abi.encodePacked(identifier)))\\n  {\\n    Context storage context = recoveryInfo[msg.sender];\\n    context.requester = msg.sender;\\n    emit RecoveryInitiated(account, msg.sender, context.guardians);\\n  }\\n\\n  function endRecovery() external backupExists(msg.sender) {\\n    Context storage context = recoveryInfo[msg.sender];\\n    context.requester = address(0);\\n    context.cooldownTime = block.timestamp + RECOVERY_PERIOD;\\n  }\\n\\n  function postRecoveryShares(address account, bytes32 encryptedShare)\\n    external\\n    backupExists(account)\\n    recoveryRequested(account)\\n  {\\n    Context storage context = recoveryInfo[account];\\n    context.recoveryShares.push(encryptedShare);\\n\\n    if (context.recoveryShares.length >= context.K) {\\n      emit ThresholdReached(account, context.requester);\\n    }\\n  }\\n\\n  function getRecoveryShares(address account)\\n    external\\n    view\\n    backupExists(account)\\n    recoveryRequested(account)\\n    returns (bytes32[] memory)\\n  {\\n    return recoveryInfo[account].recoveryShares;\\n  }\\n}\\n\",\"keccak256\":\"0xa952185ea4e2c858857fd84c7f69dd2fcd7b19b522731e1776d8048b45d776a4\",\"license\":\"Unlicense\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061106b806100206000396000f3fe608060405234801561001057600080fd5b50600436106100725760003560e01c8063a441326a11610050578063a441326a146100d6578063e9216933146100e9578063f833bf91146100fc57610072565b80632011b9f5146100775780636a0b634f146100a0578063821256e3146100c1575b600080fd5b61008a610085366004610a3f565b610104565b6040516100979190610d13565b60405180910390f35b6100b36100ae366004610a60565b610217565b604051610097929190610d57565b6100d46100cf366004610a92565b6102ed565b005b6100d46100e4366004610abb565b610422565b6100d46100f7366004610b39565b61055a565b6100d4610825565b73ffffffffffffffffffffffffffffffffffffffff811660009081526020819052604090205460609082906101545760405162461bcd60e51b815260040161014b90610e0f565b60405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff80841660009081526020819052604090206005015484911661019d5760405162461bcd60e51b815260040161014b90610f26565b73ffffffffffffffffffffffffffffffffffffffff8416600090815260208181526040918290206003018054835181840281018401909452808452909183018282801561020957602002820191906000526020600020905b8154815260200190600101908083116101f5575b505050505092505050919050565b73ffffffffffffffffffffffffffffffffffffffff82166000908152602081905260408120548190849061025d5760405162461bcd60e51b815260040161014b90610e0f565b73ffffffffffffffffffffffffffffffffffffffff8086166000908152602081905260409020600501548691166102a65760405162461bcd60e51b815260040161014b90610f26565b5050505073ffffffffffffffffffffffffffffffffffffffff9182166000908152602081815260408083209385168352600284019091529020546005909101549092911690565b73ffffffffffffffffffffffffffffffffffffffff821660009081526020819052604090205482906103315760405162461bcd60e51b815260040161014b90610e0f565b73ffffffffffffffffffffffffffffffffffffffff80841660009081526020819052604090206005015484911661037a5760405162461bcd60e51b815260040161014b90610f26565b73ffffffffffffffffffffffffffffffffffffffff84166000908152602081815260408220600381018054600181018255818552929093209091018590556004810154915490911161041b5760058101546040517f55c319425d51fe379fcb248024f6e8a3a4ae2c15ed11c9225999523b30d1e9429161041291889173ffffffffffffffffffffffffffffffffffffffff1690610c79565b60405180910390a15b5050505050565b73ffffffffffffffffffffffffffffffffffffffff831660009081526020819052604090205483906104665760405162461bcd60e51b815260040161014b90610e0f565b83838360405160200161047a929190610c30565b60408051808303601f1901815291815281516020928301206000818152600190935291205473ffffffffffffffffffffffffffffffffffffffff8381169116146104d65760405162461bcd60e51b815260040161014b90610e6c565b33600081815260208190526040908190206005810180547fffffffffffffffffffffffff00000000000000000000000000000000000000001684179055905190917fca3c4af7ae59a445a20ae82aafcd704cb9543cf336d9eaa7651fab3bc6b11aac91610549918a916001860190610ca0565b60405180910390a150505050505050565b33600090815260208190526040902054156105875760405162461bcd60e51b815260040161014b90610d7b565b82518451146105a85760405162461bcd60e51b815260040161014b90610dd8565b83518211156105c95760405162461bcd60e51b815260040161014b90610ec9565b3360016000836040516020016105df9190610c40565b60408051808303601f190181529181528151602092830120835282820193909352908201600090812080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff9590951694909417909355338352829052902085815560048101839055845167ffffffffffffffff81111561068657634e487b7160e01b600052604160045260246000fd5b6040519080825280602002602001820160405280156106af578160200160208202803683370190505b5080516106c69160018401916020909101906108a0565b5060005b85518160ff16101561081c57858160ff16815181106106f957634e487b7160e01b600052603260045260246000fd5b6020026020010151826001018260ff168154811061072757634e487b7160e01b600052603260045260246000fd5b9060005260206000200160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550848160ff168151811061079257634e487b7160e01b600052603260045260246000fd5b6020026020010151826002016000888460ff16815181106107c357634e487b7160e01b600052603260045260246000fd5b602002602001015173ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550808061081490610fe9565b9150506106ca565b50505050505050565b336000818152602081905260409020546108515760405162461bcd60e51b815260040161014b90610e0f565b3360009081526020819052604090206005810180547fffffffffffffffffffffffff000000000000000000000000000000000000000016905561089762093a8042610fd1565b60069091015550565b82805482825590600052602060002090810192821561091a579160200282015b8281111561091a57825182547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff9091161782556020909201916001909101906108c0565b5061092692915061092a565b5090565b5b80821115610926576000815560010161092b565b803573ffffffffffffffffffffffffffffffffffffffff8116811461096357600080fd5b919050565b600082601f830112610978578081fd5b8135602061098d61098883610fad565b610f83565b82815281810190858301838502870184018810156109a9578586fd5b855b858110156109c7578135845292840192908401906001016109ab565b5090979650505050505050565b600082601f8301126109e4578081fd5b813567ffffffffffffffff8111156109fe576109fe61101f565b610a116020601f19601f84011601610f83565b818152846020838601011115610a25578283fd5b816020850160208301379081016020019190915292915050565b600060208284031215610a50578081fd5b610a598261093f565b9392505050565b60008060408385031215610a72578081fd5b610a7b8361093f565b9150610a896020840161093f565b90509250929050565b60008060408385031215610aa4578182fd5b610aad8361093f565b946020939093013593505050565b600080600060408486031215610acf578081fd5b610ad88461093f565b9250602084013567ffffffffffffffff80821115610af4578283fd5b818601915086601f830112610b07578283fd5b813581811115610b15578384fd5b876020828501011115610b26578384fd5b6020830194508093505050509250925092565b600080600080600060a08688031215610b50578081fd5b8535945060208087013567ffffffffffffffff80821115610b6f578384fd5b818901915089601f830112610b82578384fd5b8135610b9061098882610fad565b81815284810190848601868402860187018e1015610bac578788fd5b8795505b83861015610bd557610bc18161093f565b835260019590950194918601918601610bb0565b50985050506040890135925080831115610bed578384fd5b610bf98a848b01610968565b9550606089013594506080890135925080831115610c15578384fd5b5050610c23888289016109d4565b9150509295509295909350565b6000828483379101908152919050565b60008251815b81811015610c605760208186018101518583015201610c46565b81811115610c6e5782828501525b509190910192915050565b73ffffffffffffffffffffffffffffffffffffffff92831681529116602082015260400190565b60006060820173ffffffffffffffffffffffffffffffffffffffff8087168452602081871681860152606060408601528286548085526080870191508786528286209450855b81811015610d04578554851683526001958601959284019201610ce6565b50909998505050505050505050565b6020808252825182820181905260009190848201906040850190845b81811015610d4b57835183529284019291840191600101610d2f565b50909695505050505050565b91825273ffffffffffffffffffffffffffffffffffffffff16602082015260400190565b60208082526024908201527f4163636f756e7420616c72656164792065786973747320696e2074686520737960408201527f7374656d00000000000000000000000000000000000000000000000000000000606082015260800190565b6020808252601c908201527f4b6579207368617265206e756d6265722064697363726570656e637900000000604082015260600190565b6020808252602c908201527f5265636f7665727920696e666f20646f6573206e6f7420657869737420666f7260408201527f20746865206163636f756e740000000000000000000000000000000000000000606082015260800190565b60208082526029908201527f4964656e74696669657220646f6573206e6f74206d61746368206163636f756e60408201527f7420616464726573730000000000000000000000000000000000000000000000606082015260800190565b6020808252602e908201527f5468726573686f6c64206d757374206265203c3d20746f74616c206e756d626560408201527f72206f6620677561726469616e73000000000000000000000000000000000000606082015260800190565b6020808252602e908201527f4163636f756e7420686173206e6f74206265656e20726571756573746564207460408201527f6f206265207265636f7665726564000000000000000000000000000000000000606082015260800190565b60405181810167ffffffffffffffff81118282101715610fa557610fa561101f565b604052919050565b600067ffffffffffffffff821115610fc757610fc761101f565b5060209081020190565b60008219821115610fe457610fe4611009565b500190565b600060ff821660ff81141561100057611000611009565b60010192915050565b634e487b7160e01b600052601160045260246000fd5b634e487b7160e01b600052604160045260246000fdfea264697066735822122069c8492acc96fe347988117e50ea5eb0e989cf8aac7ad8b84ce73d31a481f86264736f6c63430008000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100725760003560e01c8063a441326a11610050578063a441326a146100d6578063e9216933146100e9578063f833bf91146100fc57610072565b80632011b9f5146100775780636a0b634f146100a0578063821256e3146100c1575b600080fd5b61008a610085366004610a3f565b610104565b6040516100979190610d13565b60405180910390f35b6100b36100ae366004610a60565b610217565b604051610097929190610d57565b6100d46100cf366004610a92565b6102ed565b005b6100d46100e4366004610abb565b610422565b6100d46100f7366004610b39565b61055a565b6100d4610825565b73ffffffffffffffffffffffffffffffffffffffff811660009081526020819052604090205460609082906101545760405162461bcd60e51b815260040161014b90610e0f565b60405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff80841660009081526020819052604090206005015484911661019d5760405162461bcd60e51b815260040161014b90610f26565b73ffffffffffffffffffffffffffffffffffffffff8416600090815260208181526040918290206003018054835181840281018401909452808452909183018282801561020957602002820191906000526020600020905b8154815260200190600101908083116101f5575b505050505092505050919050565b73ffffffffffffffffffffffffffffffffffffffff82166000908152602081905260408120548190849061025d5760405162461bcd60e51b815260040161014b90610e0f565b73ffffffffffffffffffffffffffffffffffffffff8086166000908152602081905260409020600501548691166102a65760405162461bcd60e51b815260040161014b90610f26565b5050505073ffffffffffffffffffffffffffffffffffffffff9182166000908152602081815260408083209385168352600284019091529020546005909101549092911690565b73ffffffffffffffffffffffffffffffffffffffff821660009081526020819052604090205482906103315760405162461bcd60e51b815260040161014b90610e0f565b73ffffffffffffffffffffffffffffffffffffffff80841660009081526020819052604090206005015484911661037a5760405162461bcd60e51b815260040161014b90610f26565b73ffffffffffffffffffffffffffffffffffffffff84166000908152602081815260408220600381018054600181018255818552929093209091018590556004810154915490911161041b5760058101546040517f55c319425d51fe379fcb248024f6e8a3a4ae2c15ed11c9225999523b30d1e9429161041291889173ffffffffffffffffffffffffffffffffffffffff1690610c79565b60405180910390a15b5050505050565b73ffffffffffffffffffffffffffffffffffffffff831660009081526020819052604090205483906104665760405162461bcd60e51b815260040161014b90610e0f565b83838360405160200161047a929190610c30565b60408051808303601f1901815291815281516020928301206000818152600190935291205473ffffffffffffffffffffffffffffffffffffffff8381169116146104d65760405162461bcd60e51b815260040161014b90610e6c565b33600081815260208190526040908190206005810180547fffffffffffffffffffffffff00000000000000000000000000000000000000001684179055905190917fca3c4af7ae59a445a20ae82aafcd704cb9543cf336d9eaa7651fab3bc6b11aac91610549918a916001860190610ca0565b60405180910390a150505050505050565b33600090815260208190526040902054156105875760405162461bcd60e51b815260040161014b90610d7b565b82518451146105a85760405162461bcd60e51b815260040161014b90610dd8565b83518211156105c95760405162461bcd60e51b815260040161014b90610ec9565b3360016000836040516020016105df9190610c40565b60408051808303601f190181529181528151602092830120835282820193909352908201600090812080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff9590951694909417909355338352829052902085815560048101839055845167ffffffffffffffff81111561068657634e487b7160e01b600052604160045260246000fd5b6040519080825280602002602001820160405280156106af578160200160208202803683370190505b5080516106c69160018401916020909101906108a0565b5060005b85518160ff16101561081c57858160ff16815181106106f957634e487b7160e01b600052603260045260246000fd5b6020026020010151826001018260ff168154811061072757634e487b7160e01b600052603260045260246000fd5b9060005260206000200160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550848160ff168151811061079257634e487b7160e01b600052603260045260246000fd5b6020026020010151826002016000888460ff16815181106107c357634e487b7160e01b600052603260045260246000fd5b602002602001015173ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550808061081490610fe9565b9150506106ca565b50505050505050565b336000818152602081905260409020546108515760405162461bcd60e51b815260040161014b90610e0f565b3360009081526020819052604090206005810180547fffffffffffffffffffffffff000000000000000000000000000000000000000016905561089762093a8042610fd1565b60069091015550565b82805482825590600052602060002090810192821561091a579160200282015b8281111561091a57825182547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff9091161782556020909201916001909101906108c0565b5061092692915061092a565b5090565b5b80821115610926576000815560010161092b565b803573ffffffffffffffffffffffffffffffffffffffff8116811461096357600080fd5b919050565b600082601f830112610978578081fd5b8135602061098d61098883610fad565b610f83565b82815281810190858301838502870184018810156109a9578586fd5b855b858110156109c7578135845292840192908401906001016109ab565b5090979650505050505050565b600082601f8301126109e4578081fd5b813567ffffffffffffffff8111156109fe576109fe61101f565b610a116020601f19601f84011601610f83565b818152846020838601011115610a25578283fd5b816020850160208301379081016020019190915292915050565b600060208284031215610a50578081fd5b610a598261093f565b9392505050565b60008060408385031215610a72578081fd5b610a7b8361093f565b9150610a896020840161093f565b90509250929050565b60008060408385031215610aa4578182fd5b610aad8361093f565b946020939093013593505050565b600080600060408486031215610acf578081fd5b610ad88461093f565b9250602084013567ffffffffffffffff80821115610af4578283fd5b818601915086601f830112610b07578283fd5b813581811115610b15578384fd5b876020828501011115610b26578384fd5b6020830194508093505050509250925092565b600080600080600060a08688031215610b50578081fd5b8535945060208087013567ffffffffffffffff80821115610b6f578384fd5b818901915089601f830112610b82578384fd5b8135610b9061098882610fad565b81815284810190848601868402860187018e1015610bac578788fd5b8795505b83861015610bd557610bc18161093f565b835260019590950194918601918601610bb0565b50985050506040890135925080831115610bed578384fd5b610bf98a848b01610968565b9550606089013594506080890135925080831115610c15578384fd5b5050610c23888289016109d4565b9150509295509295909350565b6000828483379101908152919050565b60008251815b81811015610c605760208186018101518583015201610c46565b81811115610c6e5782828501525b509190910192915050565b73ffffffffffffffffffffffffffffffffffffffff92831681529116602082015260400190565b60006060820173ffffffffffffffffffffffffffffffffffffffff8087168452602081871681860152606060408601528286548085526080870191508786528286209450855b81811015610d04578554851683526001958601959284019201610ce6565b50909998505050505050505050565b6020808252825182820181905260009190848201906040850190845b81811015610d4b57835183529284019291840191600101610d2f565b50909695505050505050565b91825273ffffffffffffffffffffffffffffffffffffffff16602082015260400190565b60208082526024908201527f4163636f756e7420616c72656164792065786973747320696e2074686520737960408201527f7374656d00000000000000000000000000000000000000000000000000000000606082015260800190565b6020808252601c908201527f4b6579207368617265206e756d6265722064697363726570656e637900000000604082015260600190565b6020808252602c908201527f5265636f7665727920696e666f20646f6573206e6f7420657869737420666f7260408201527f20746865206163636f756e740000000000000000000000000000000000000000606082015260800190565b60208082526029908201527f4964656e74696669657220646f6573206e6f74206d61746368206163636f756e60408201527f7420616464726573730000000000000000000000000000000000000000000000606082015260800190565b6020808252602e908201527f5468726573686f6c64206d757374206265203c3d20746f74616c206e756d626560408201527f72206f6620677561726469616e73000000000000000000000000000000000000606082015260800190565b6020808252602e908201527f4163636f756e7420686173206e6f74206265656e20726571756573746564207460408201527f6f206265207265636f7665726564000000000000000000000000000000000000606082015260800190565b60405181810167ffffffffffffffff81118282101715610fa557610fa561101f565b604052919050565b600067ffffffffffffffff821115610fc757610fc761101f565b5060209081020190565b60008219821115610fe457610fe4611009565b500190565b600060ff821660ff81141561100057611000611009565b60010192915050565b634e487b7160e01b600052601160045260246000fd5b634e487b7160e01b600052604160045260246000fdfea264697066735822122069c8492acc96fe347988117e50ea5eb0e989cf8aac7ad8b84ce73d31a481f86264736f6c63430008000033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 25,
+        "contract": "contracts/KeyRecovery.sol:KeyRecovery",
+        "label": "recoveryInfo",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_struct(Context)20_storage)"
+      },
+      {
+        "astId": 29,
+        "contract": "contracts/KeyRecovery.sol:KeyRecovery",
+        "label": "accountIdentifier",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_bytes32,t_address)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_array(t_bytes32)dyn_storage": {
+        "base": "t_bytes32",
+        "encoding": "dynamic_array",
+        "label": "bytes32[]",
+        "numberOfBytes": "32"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_address,t_bytes32)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bytes32)",
+        "numberOfBytes": "32",
+        "value": "t_bytes32"
+      },
+      "t_mapping(t_address,t_struct(Context)20_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct KeyRecovery.Context)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Context)20_storage"
+      },
+      "t_mapping(t_bytes32,t_address)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => address)",
+        "numberOfBytes": "32",
+        "value": "t_address"
+      },
+      "t_struct(Context)20_storage": {
+        "encoding": "inplace",
+        "label": "struct KeyRecovery.Context",
+        "members": [
+          {
+            "astId": 3,
+            "contract": "contracts/KeyRecovery.sol:KeyRecovery",
+            "label": "secret",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bytes32"
+          },
+          {
+            "astId": 6,
+            "contract": "contracts/KeyRecovery.sol:KeyRecovery",
+            "label": "guardians",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_address)dyn_storage"
+          },
+          {
+            "astId": 10,
+            "contract": "contracts/KeyRecovery.sol:KeyRecovery",
+            "label": "secretShare",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_address,t_bytes32)"
+          },
+          {
+            "astId": 13,
+            "contract": "contracts/KeyRecovery.sol:KeyRecovery",
+            "label": "recoveryShares",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_bytes32)dyn_storage"
+          },
+          {
+            "astId": 15,
+            "contract": "contracts/KeyRecovery.sol:KeyRecovery",
+            "label": "K",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 17,
+            "contract": "contracts/KeyRecovery.sol:KeyRecovery",
+            "label": "requester",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address"
+          },
+          {
+            "astId": 19,
+            "contract": "contracts/KeyRecovery.sol:KeyRecovery",
+            "label": "cooldownTime",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "224"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
