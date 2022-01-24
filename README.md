@@ -6,7 +6,7 @@
 ### To Compile:
     `yarn hardhat compile`
 
-### To Deploy on <NETWORK>:
+### To Deploy on /<NETWORK/:wq>:
     1. Create a '.env' file and add a variable for MNEMONIC
     2. `yarn hardhat deploy --network <NETWORK>`
 
